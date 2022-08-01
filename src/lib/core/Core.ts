@@ -36,6 +36,7 @@ export class Core {
     return players.filter(x => x.isValid);
   }
 }
+  
 
 function pointersOf(players: Array<app.Player>): Array<app.Pointer> {
   return players.flatMap(x => Object.values(x).filter(y => y instanceof app.Pointer));

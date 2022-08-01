@@ -17,13 +17,20 @@ const path = require('path');
     localOrigin: find(cBaseEntity, 'm_localOrigin') + BigInt(0x100),
     iTeamNum: find(cBaseEntity, 'm_iTeamNum'),
     iName: find(cBaseEntity, 'm_iName'),
+    glowColor: find(offsets, 'glow_color'),
+    glowType: find(offsets, 'glow_type') + BigInt(0x4),
     glowEnable: BigInt(0x3c8),
+    ThirdPerson: BigInt('0x36a8'),
     glowThroughWall: BigInt(0x3d0)
   });
 
   writeAsync('playerOffsets', {
     lifeState: find(cPlayer, 'm_lifeState'),
     viewAngles: find(cPlayer, 'm_ammoPoolCapacity') - BigInt(0x14),
+    iHealth: find(cPlayer, 'm_iHealth'),
+    iMaxHealth: find(cPlayer, 'm_iMaxHealth'),
+    shieldHealth: find(cBaseEntity, 'm_shieldHealth'),
+    shieldHealthMax: find(cBaseEntity, 'm_shieldHealthMax'),
     bleedoutState: find(cPlayer, 'm_bleedoutState')
   });
 })();

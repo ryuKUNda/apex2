@@ -44,7 +44,6 @@ function renderFrame(levelName: app.CString, localPlayer: app.Player | undefined
       break;
   }
 }
-
 async function senseAsync(localPlayer: app.Player | undefined, players: Array<app.Player>, sense: app.Sense) {
   if (!localPlayer) return;
   if (!location.hash.includes('enable-sense')) return;
