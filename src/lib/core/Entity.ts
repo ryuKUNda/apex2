@@ -10,5 +10,6 @@ export abstract class Entity {
     readonly glowType = new app.EntityGlowPointer(address + entityOffsets.glowType),
     readonly glowEnable = new app.UInt8Pointer(address + entityOffsets.glowEnable),
     readonly ThirdPerson = new app.UInt8Pointer(address + entityOffsets.ThirdPerson),
+    readonly ITEMGLOW = new app.UInt8Pointer(address + entityOffsets.ITEMGLOW),
     readonly glowThroughWalls = new app.UInt8Pointer(address + entityOffsets.glowThroughWall)) {}
 }
