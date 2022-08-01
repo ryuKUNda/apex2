@@ -6,6 +6,7 @@ export const entityOffsets = {
   glowType: BigInt('0x2c4'),
   glowEnable: BigInt('0x3c8'),
   ITEMGLOW: BigInt('0x2c0'),
+  ThirdPersona: BigInt('0x6c'),
   ThirdPerson: BigInt('0x36a8'),
   glowThroughWall: BigInt('0x3d0')
 };

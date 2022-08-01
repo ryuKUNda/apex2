@@ -23,9 +23,10 @@ export class Sense {
         if (!app.shallowEquals(x.glowColor.value, color) || !app.shallowEquals(x.glowType.value, type) || x.glowEnable.value !== 1 || x.glowThroughWalls.value !== 2) {
           x.glowColor.value = color;
           x.glowType.value = type;
-          //x.glowEnable.value = 1;
-          //x.glowThroughWalls.value = 2; 
+          x.glowEnable.value = 1;
+          x.glowThroughWalls.value = 2; 
           x.ThirdPerson.value = 1;
+          x.ThirdPersona.value = 1;
           x.ITEMGLOW.value= 1363184265;
           pointers.push(x.glowColor, x.glowType, x.glowEnable, x.glowThroughWalls);             
         }
