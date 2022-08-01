@@ -4,7 +4,7 @@ export const entityOffsets = {
   iName: BigInt('0x589'),
   glowColor: BigInt('0x1d0'),
   glowType: BigInt('0x2c4'),
-  glowEnable: BigInt('0x3a8'),
+  glowEnable: BigInt('0x3c8'),
   ThirdPerson: BigInt('0x36a8'),
   glowThroughWall: BigInt('0x3d0')
 };
