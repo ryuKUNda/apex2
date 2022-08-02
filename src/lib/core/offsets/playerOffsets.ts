@@ -5,5 +5,6 @@ export const playerOffsets = {
   iMaxHealth: BigInt('0x578'),
   shieldHealth: BigInt('0x170'),
   shieldHealthMax: BigInt('0x174'),
-  bleedoutState: BigInt('0x2720')
+  bleedoutState: BigInt('0x2720'),
+  cameraPos: BigInt('0x1f40')
 };

@@ -9,6 +9,7 @@ export class Player extends app.Entity {
     readonly health = new app.UInt8Pointer(address + playerOffsets.iHealth),
     readonly healthMax = new app.UInt8Pointer(address + playerOffsets.iMaxHealth),
     readonly viewAngles = new app.VectorPointer(address + playerOffsets.viewAngles),
+    readonly cameraPos = new app.VectorPointer(address + playerOffsets.cameraPos),
     readonly bleedoutState = new app.UInt8Pointer(address + playerOffsets.bleedoutState)) {
     super(address);
   }
@@ -18,7 +19,12 @@ export class Player extends app.Entity {
       && !this.lifeState.value
       && !app.shallowEquals(this.localOrigin.value, new app.Vector(0, 0, 0));
   }
-  
+  get bodyPos() {
+    var v = this.localOrigin.value;
+    const HEADOFFSET = 35;
+    v.z += HEADOFFSET - 5;
+    return v;
+  }
   createColor(otherPlayer: app.Player, mode?: string) {
     if(!this.isLocal && !this.bleedoutState.value && !this.isSameTeam(otherPlayer, mode)){
       if(this.shieldHealth.value < Math.floor(this.shieldHealthMax.value/3) && this.health.value < Math.floor(this.healthMax.value/3)){

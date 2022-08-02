@@ -31,7 +31,8 @@ const path = require('path');
     iMaxHealth: find(cPlayer, 'm_iMaxHealth'),
     shieldHealth: find(cBaseEntity, 'm_shieldHealth'),
     shieldHealthMax: find(cBaseEntity, 'm_shieldHealthMax'),
-    bleedoutState: find(cPlayer, 'm_bleedoutState')
+    bleedoutState: find(cPlayer, 'm_bleedoutState'),
+    cameraPos: BigInt(0x1f40)
   });
 })();
 

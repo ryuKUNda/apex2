@@ -8,5 +8,8 @@ export const entityOffsets = {
   ITEMGLOW: BigInt('0x2c0'),
   ThirdPersona: BigInt('0x6c'),
   ThirdPerson: BigInt('0x36a8'),
+  itemId: BigInt('0x16a8'),
+  cPropSurvival: BigInt('0x012a0828'),
+  m_iSignifierName: BigInt('0x0580'),
   glowThroughWall: BigInt('0x3d0')
 };
