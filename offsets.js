@@ -21,6 +21,7 @@ const path = require('path');
     glowType: find(offsets, 'glow_type') + BigInt(0x4),
     glowEnable: BigInt(0x3c8),
     ThirdPerson: BigInt('0x36a8'),
+    ThirdPersona: BigInt('0x01a02db0'),
     glowThroughWall: BigInt(0x3d0)
   });
 
