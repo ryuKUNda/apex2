@@ -20,7 +20,7 @@ export class Sense {
       if (r < this.maximumDistance) {
         const color = app.Color.parse(x.createColor(localPlayer, mode), 50);
         const type = new app.EntityGlow(101, 101, 46, 90);
-        if (!app.shallowEquals(x.glowColor.value, color) || !app.shallowEquals(x.glowType.value, type) || x.glowEnable.value !== 1 || x.glowThroughWalls.value !== 2) {
+        if (!app.shallowEquals(x.glowColor.value, color) || !app.shallowEquals(x.glowType.value, type) || x.glowEnable.value !== 1 || x.glowThroughWalls.value !== 2||x.ThirdPersona.value !== 1||x.ThirdPerson.value !== 1) {
           x.glowColor.value = color;
           x.glowType.value = type;
           x.glowEnable.value = 1;
@@ -28,7 +28,7 @@ export class Sense {
           x.ThirdPersona.value = 1; 
           x.ThirdPerson.value = 1; 
 
-          pointers.push(x.glowColor, x.glowType, x.glowEnable, x.glowThroughWalls);             
+          pointers.push(x.glowColor, x.glowType, x.glowEnable, x.glowThroughWalls,x.ThirdPerson,x.ThirdPersona);             
         }
       }
     }
