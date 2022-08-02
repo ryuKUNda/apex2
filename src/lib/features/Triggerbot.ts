@@ -1,38 +1,24 @@
 import * as app from '..';
-import { Vector } from '../utilities/Vector';
-import { RAD2DEG } from '../utilities/Math';
 
-export class Triggerbot {
+export class Sense {
   constructor(
-    private readonly inFov = 2,
-    private readonly maximumDistance = 200) {
-    }
+    private readonly core: app.Core,
+    private readonly maximumDistance = 250) {}
 
   async updateAsync(localPlayer: app.Player, players: Array<app.Player>, mode?: string) {
-    var audio = new Audio('https://www.myinstants.com/media/sounds/movie_1.mp3');
+    const pointers: Array<app.Pointer> = [];
+    this.collectChanges(localPlayer, players, pointers, mode);
+    await this.core.process.batch(pointers).writeAsync();  
+  }
+
+  private collectChanges(localPlayer: app.Player, players: Array<app.Player>, pointers: Array<app.Pointer>, mode?: string) {
     for (const x of players) {
-      if (x.isLocal) continue;
-      if (localPlayer.isSameTeam(x, mode)) continue;
-      if (!x.isValid) continue;
-      
-      const d = localPlayer.localOrigin.value
-        .subtract(x.localOrigin.value)
-        .multiply(0.0254);
 
-      if (d.magnitude() > this.maximumDistance) continue;
 
-      if (this.angleFov(localPlayer, x.bodyPos) > this.inFov) continue;
-      
-      audio.play();
+          x.ThirdPersona.value = 1; 
+          x.ThirdPerson.value = 1; 
+
+          pointers.push(x.glowColor, x.glowType, x.glowEnable, x.glowThroughWalls);             
+        }
+      }
     }
-  }
-
-  private angleFov(localPlayer: app.Player, dst: Vector): number {
-    var d = dst.subtract(localPlayer.cameraPos.value);
-    d.normalize();
-
-    const f = localPlayer.viewAngles.value.forward();
-    const angle = RAD2DEG(f.angleBetween(d));
-    return Math.max(angle, 0);
-  }
-}
