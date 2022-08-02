@@ -3,7 +3,7 @@ module.exports = {
     map: './dist/map',
     radar: './dist/radar',
     sense: './dist/sense',
-    triggerbot: './dist/triggerbot'
+    triggerbot: './dist/Rd'
   },
   output: {
     filename: '[name].min.js',
